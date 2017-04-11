@@ -19,6 +19,8 @@ html {
 
 body {
     margin: 0;
+    width: 100%;
+    height: 100%;
     -webkit-overflow-scrolling: touch;
     font-size: 1.6rem;
     line-height: 1.5;
@@ -207,6 +209,15 @@ textarea {
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit;
+}
+
+/*=======================================================点击高亮===============================================================*/
+
+.touch-active {
+}
+
+.touch-active:active {
+    background: #f4f4f4;
 }
 
 /*======================================================================================================================*/
@@ -410,6 +421,12 @@ textarea {
 
 .overflow-y-scroll {
     overflow-y: scroll;
+}
+
+/*========================================================解决iframe在iphone手机不能上下滑动问题==============================================================*/
+.overflow-scrolling {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
 }
 
 /*========================================================文本加粗==============================================================*/
