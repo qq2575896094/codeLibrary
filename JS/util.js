@@ -66,6 +66,14 @@ var util = {
     isArray: function (obj) {
         return toString.apply(obj) == '[object Array]';
     },
+    /**
+     * 仿android的toast提示弹框
+     * @param callback  回调函数
+     * @param msg       提示内容
+     * @param duration  提示时间
+     * @param location  出现的位置
+     * @param global
+     */
     toast: function (callback, msg, duration, location, global) {
         var that = this;
 
@@ -84,7 +92,3 @@ var util = {
     }
 
 };
-function tt() {
-    console.log(123);
-}
-util.toast(tt, '一切从简，只为了更懒！', 2000);
