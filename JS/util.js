@@ -14,6 +14,7 @@ var util = {
     isTargetType: function (obj, typeString) {
         return typeof obj === typeString;
     },
+
     /**
      * 判断是否是个函数
      * @param obj
@@ -23,6 +24,7 @@ var util = {
         var that = this;
         return that.isTargetType(obj, "function");
     },
+
     /**
      * 判断num是否是个数值number
      * @param num
@@ -31,6 +33,7 @@ var util = {
     isNumber: function (num) {
         return !isNaN(num);
     },
+
     /**
      * 判断obj是不是字符串
      * @param obj
@@ -40,6 +43,7 @@ var util = {
         var that = this;
         return that.isTargetType(obj, "string") && obj != null && obj != undefined;
     },
+
     /**
      * 判断obj是不是boolean类型
      * @param obj
@@ -49,6 +53,7 @@ var util = {
         var that = this;
         return that.isTargetType(obj, "boolean");
     },
+
     /**
      * 判断obj是不是对象
      * @param obj
@@ -58,6 +63,7 @@ var util = {
         var that = this;
         return that.isTargetType(obj, "object") && obj != null;
     },
+
     /**
      * 判断obj是不是数组
      * @param obj
@@ -66,6 +72,27 @@ var util = {
     isArray: function (obj) {
         return toString.apply(obj) == '[object Array]';
     },
+
+    /**
+     * 获取可是区域的top,left,width,height
+     * @returns {{top: *, left: *, width: *, height: *}}
+     */
+    getScroll: function () {
+        var t, l, w, h;
+        if (document.documentElement && document.documentElement.scrollTop) {
+            t = document.documentElement.scrollTop;
+            l = document.documentElement.scrollLeft;
+            w = document.documentElement.scrollWidth;
+            h = document.documentElement.scrollHeight;
+        } else if (document.body) {
+            t = document.body.scrollTop;
+            l = document.body.scrollLeft;
+            w = document.body.scrollWidth;
+            h = document.body.scrollHeight;
+        }
+        return {top: t, left: l, width: w, height: h};
+    },
+
     /**
      * 仿android的toast提示弹框
      * @param callback  回调函数
